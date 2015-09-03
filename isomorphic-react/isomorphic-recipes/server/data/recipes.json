@@ -1,0 +1,20 @@
+[
+    {
+        "name" : "Lemon Chicken",
+        "image" : "image",
+        "time" : "30",
+        "ingredients" : [ "Chicken", "Lemon", "Thyme"]
+    },
+    {
+        "name" : "Beef Stroganoff",
+        "image" : "image2",
+        "time" : "30",
+        "ingredients" : ["Beef", "Mustard", "Mushrooms"]
+    },
+    {
+        "name" : "Ceasar Salad",
+        "image" : "image2",
+        "time" : "25",
+        "ingredients" : ["Lettuce", "Croutons", "Parmesan"]
+    }
+]
