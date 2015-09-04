@@ -1,8 +1,8 @@
 'use strict'
 
-import api from '../../server/recipeApi'
-import {Promise} from 'es6-promise'
-import rewire from 'rewire'
+var api = require('../../server/recipeApi');
+var Promise = require('es6-promise').Promise;
+var rewire = require('rewire');
 
 describe('The recipe Api', function() {
 

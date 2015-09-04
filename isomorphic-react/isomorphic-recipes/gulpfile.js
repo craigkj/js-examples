@@ -19,19 +19,6 @@ gulp.task('browserify', function() {
         // .pipe(streamify(uglify()))
         .pipe(gulp.dest('./public/js'));
 });
-
-// gulp.task('codestyle', function () {
-//     return gulp.src(['server.js', 'src/**/*.js', 'server/**/*.js', '!**/node_modules/**/*.js'])
-//         .pipe(jsxcs());
-// });
-
-// gulp.task('jshint', function() {
-//     return gulp.src(['server.js', 'src/**/*.js', 'server/**/*.js', 'test/**/*.js', '!**/node_modules/**/*.js'])
-//         .pipe(react())
-//         .pipe(jshint({'esnext' : true}))
-//         .pipe(jshint.reporter(jshintStylish));
-// });
-
 gulp.task('mocha', function() {
 
     return gulp.src(['test/**/*.js'])
@@ -44,3 +31,5 @@ gulp.task('mocha', function() {
 });
 
 gulp.task('test', ['mocha']);
+gulp.task('build', ['test', 'browserify']);
+gulp.task('default', ['build']);

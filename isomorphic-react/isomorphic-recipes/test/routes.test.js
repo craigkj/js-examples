@@ -1,9 +1,9 @@
 'use strict'
 
-import routes from '../routes';
-import express from 'express';
-import request from 'supertest'
-import rewire from 'rewire';
+var routes = require('../routes');
+var express = require('express');
+var request = require('supertest');
+var rewire = require('rewire');
 
 var app;
 
@@ -29,6 +29,7 @@ describe('the app', function() {
 
         describe('the root endpoint', function() {
             it('should return a 200', function(done) {
+                this.timeout(4000);
                 request(app)
                     .get('/')
                     .expect(200)
