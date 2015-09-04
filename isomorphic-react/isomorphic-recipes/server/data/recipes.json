@@ -1,19 +1,19 @@
 [
     {
         "name" : "Lemon Chicken",
-        "image" : "image",
+        "image" : "lemon-chicken.jpg",
         "time" : "30",
         "ingredients" : [ "Chicken", "Lemon", "Thyme"]
     },
     {
         "name" : "Beef Stroganoff",
-        "image" : "image2",
+        "image" : "beef-stroganoff.jpg",
         "time" : "30",
         "ingredients" : ["Beef", "Mustard", "Mushrooms"]
     },
     {
         "name" : "Ceasar Salad",
-        "image" : "image2",
+        "image" : "caesar-salad.jpg",
         "time" : "25",
         "ingredients" : ["Lettuce", "Croutons", "Parmesan"]
     }

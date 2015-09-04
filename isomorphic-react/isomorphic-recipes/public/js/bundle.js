@@ -47,19 +47,23 @@ var Recipe = React.createClass({displayName: "Recipe",
     },
     render:function() {
         var recipe = this.state.recipe;
+        var imageUrl = '/images/' + this.state.recipe.image;
 
         return (
             React.createElement("div", {className: "recipe"}, 
-                React.createElement("ul", {className: "list-unstyled"}, 
-                    React.createElement("li", null, React.createElement("strong", null, "Name"), ": ", recipe.name), 
-                    React.createElement("li", null, React.createElement("strong", null, "Cooking Time"), ": ", recipe.time, " Minutes"), 
-                    React.createElement("li", null, React.createElement("strong", null, "Ingredients"), ":", 
-                        React.createElement("ul", null, 
-                             (recipe.ingredients) ?
-                                recipe.ingredients.map(function(ingredient, index) {
-                                    return React.createElement("li", {key: ingredient}, ingredient)
-                                }) : null
-                            
+                React.createElement("div", {className: "pull-left"}, React.createElement("img", {src: imageUrl})), 
+                React.createElement("div", null, 
+                    React.createElement("ul", {className: "list-unstyled"}, 
+                        React.createElement("li", null, React.createElement("strong", null, "Name"), ": ", recipe.name), 
+                        React.createElement("li", null, React.createElement("strong", null, "Cooking Time"), ": ", recipe.time, " Minutes"), 
+                        React.createElement("li", null, React.createElement("strong", null, "Ingredients"), ":", 
+                            React.createElement("ul", {className: "list-unstyled"}, 
+                                 (recipe.ingredients) ?
+                                    recipe.ingredients.map(function(ingredient, index) {
+                                        return React.createElement("li", {key: ingredient}, ingredient)
+                                    }) : null
+                                
+                            )
                         )
                     )
                 )
@@ -88,19 +92,23 @@ var Recipe = React.createClass({displayName: "Recipe",
     },
     render:function() {
         var recipe = this.state.recipe;
+        var imageUrl = '/images/' + this.state.recipe.image;
 
         return (
             React.createElement("div", {className: "recipe"}, 
-                React.createElement("ul", {className: "list-unstyled"}, 
-                    React.createElement("li", null, React.createElement("strong", null, "Name"), ": ", recipe.name), 
-                    React.createElement("li", null, React.createElement("strong", null, "Cooking Time"), ": ", recipe.time, " Minutes"), 
-                    React.createElement("li", null, React.createElement("strong", null, "Ingredients"), ":", 
-                        React.createElement("ul", null, 
-                             (recipe.ingredients) ?
-                                recipe.ingredients.map(function(ingredient, index) {
-                                    return React.createElement("li", {key: ingredient}, ingredient)
-                                }) : null
-                            
+                React.createElement("div", {className: "pull-left"}, React.createElement("img", {src: imageUrl})), 
+                React.createElement("div", null, 
+                    React.createElement("ul", {className: "list-unstyled"}, 
+                        React.createElement("li", null, React.createElement("strong", null, "Name"), ": ", recipe.name), 
+                        React.createElement("li", null, React.createElement("strong", null, "Cooking Time"), ": ", recipe.time, " Minutes"), 
+                        React.createElement("li", null, React.createElement("strong", null, "Ingredients"), ":", 
+                            React.createElement("ul", {className: "list-unstyled"}, 
+                                 (recipe.ingredients) ?
+                                    recipe.ingredients.map(function(ingredient, index) {
+                                        return React.createElement("li", {key: ingredient}, ingredient)
+                                    }) : null
+                                
+                            )
                         )
                     )
                 )
