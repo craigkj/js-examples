@@ -19,6 +19,7 @@ var RecipeList =
             this.setState(RecipeStore.getState());
         },
         render() {
+            console.log('hello from recipes');
             return (
                 <div className="recipe-list">
                     <h2>Recipe List</h2>

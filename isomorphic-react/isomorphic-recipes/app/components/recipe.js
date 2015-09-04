@@ -14,6 +14,7 @@ var Recipe = React.createClass({
     },
     render() {
         var recipe = this.state.recipe;
+        console.log('hello from recipe');
 
         return (
             <div className="recipe">
