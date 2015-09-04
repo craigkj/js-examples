@@ -5,7 +5,6 @@ var alt = require('./alt');
 var Iso = require('iso');
 
 Iso.bootstrap(function (state, _, container) {
-    console.log('bootstrapping');
     alt.bootstrap(state);
 
     if (document.getElementById('recipeList')) {

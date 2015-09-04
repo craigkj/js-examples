@@ -14,14 +14,13 @@ var Recipe = React.createClass({
     },
     render() {
         var recipe = this.state.recipe;
-        console.log('hello from recipe');
 
         return (
             <div className="recipe">
-                <ul>
-                    <li>Name: {recipe.name}</li>
-                    <li>Cooking Time: {recipe.time} Minutes</li>
-                    <li>Ingredients:
+                <ul className="list-unstyled">
+                    <li><strong>Name</strong>: {recipe.name}</li>
+                    <li><strong>Cooking Time</strong>: {recipe.time} Minutes</li>
+                    <li><strong>Ingredients</strong>:
                         <ul>
                             { (recipe.ingredients) ?
                                 recipe.ingredients.map(function(ingredient, index) {

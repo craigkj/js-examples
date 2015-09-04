@@ -6,7 +6,6 @@ var alt = require('./alt');
 var Iso = require('iso');
 
 Iso.bootstrap(function (state, _, container) {
-    console.log('bootstrapping');
     alt.bootstrap(state);
 
     if (document.getElementById('recipeList')) {
@@ -48,14 +47,13 @@ var Recipe = React.createClass({displayName: "Recipe",
     },
     render:function() {
         var recipe = this.state.recipe;
-        console.log('hello from recipe');
 
         return (
             React.createElement("div", {className: "recipe"}, 
-                React.createElement("ul", null, 
-                    React.createElement("li", null, "Name: ", recipe.name), 
-                    React.createElement("li", null, "Cooking Time: ", recipe.time, " Minutes"), 
-                    React.createElement("li", null, "Ingredients:", 
+                React.createElement("ul", {className: "list-unstyled"}, 
+                    React.createElement("li", null, React.createElement("strong", null, "Name"), ": ", recipe.name), 
+                    React.createElement("li", null, React.createElement("strong", null, "Cooking Time"), ": ", recipe.time, " Minutes"), 
+                    React.createElement("li", null, React.createElement("strong", null, "Ingredients"), ":", 
                         React.createElement("ul", null, 
                              (recipe.ingredients) ?
                                 recipe.ingredients.map(function(ingredient, index) {
@@ -90,14 +88,13 @@ var Recipe = React.createClass({displayName: "Recipe",
     },
     render:function() {
         var recipe = this.state.recipe;
-        console.log('hello from recipe');
 
         return (
             React.createElement("div", {className: "recipe"}, 
-                React.createElement("ul", null, 
-                    React.createElement("li", null, "Name: ", recipe.name), 
-                    React.createElement("li", null, "Cooking Time: ", recipe.time, " Minutes"), 
-                    React.createElement("li", null, "Ingredients:", 
+                React.createElement("ul", {className: "list-unstyled"}, 
+                    React.createElement("li", null, React.createElement("strong", null, "Name"), ": ", recipe.name), 
+                    React.createElement("li", null, React.createElement("strong", null, "Cooking Time"), ": ", recipe.time, " Minutes"), 
+                    React.createElement("li", null, React.createElement("strong", null, "Ingredients"), ":", 
                         React.createElement("ul", null, 
                              (recipe.ingredients) ?
                                 recipe.ingredients.map(function(ingredient, index) {
@@ -137,7 +134,6 @@ var RecipeList =
             this.setState(RecipeStore.getState());
         },
         render:function() {
-            console.log('hello from recipes');
             return (
                 React.createElement("div", {className: "recipe-list"}, 
                     React.createElement("h2", null, "Recipe List"), 

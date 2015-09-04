@@ -1,8 +1,11 @@
 doctype html
 html(lang="en")
-  head
-  body
-    block content
-        div#recipeList
-            != html
-    script(src = 'js/bundle.js')
+    head
+        link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css")
+        link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css")
+    body
+        block content
+            div.container
+                div#recipeList
+                    != html
+        script(src = 'js/bundle.js')
