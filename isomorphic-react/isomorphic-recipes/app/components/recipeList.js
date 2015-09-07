@@ -2,6 +2,8 @@
 var React = require('react');
 var Recipe = require('./Recipe');
 var RecipeStore = require('../stores/recipeStore');
+var RecipeActions = require('../actions/recipeActions');
+var canUseDOM = require('react/lib/ExecutionEnvironment').canUseDOM;
 
 var RecipeList =
     React.createClass({
@@ -11,11 +13,15 @@ var RecipeList =
         componentDidMount: function() {
             RecipeStore.listen(this._onChange);
         },
+        componentWillMount() {
+            if (canUseDOM) {
+                RecipeActions.fetchRecipes();
+            }
+        },
         componentWillUnmount() {
             RecipeStore.unlisten(this._onChange);
         },
         _onChange() {
-            console.log('change');
             this.setState(RecipeStore.getState());
         },
         render() {

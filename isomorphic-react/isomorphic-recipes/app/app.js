@@ -6,7 +6,6 @@ var Iso = require('iso');
 
 Iso.bootstrap(function (state, _, container) {
     alt.bootstrap(state);
-
     if (document.getElementById('recipeList')) {
         React.render(
             <RecipeList />,
