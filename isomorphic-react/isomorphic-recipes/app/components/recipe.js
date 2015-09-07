@@ -16,14 +16,15 @@ var Recipe = React.createClass({
     },
     render() {
         var recipe = this.state.recipe;
-        var imageUrl = '/images/' + this.state.recipe.image;
+        var imageUrl = '/images/' + recipe.image;
+        var recipeUrl = '/recipe/' + recipe.name;
 
         return (
             <div className="recipe">
                 <div className="pull-left"><img src={imageUrl} /></div>
                 <div>
                     <ul className="list-unstyled">
-                        <li><strong>Name</strong>: {recipe.name}</li>
+                        <li><strong>Name</strong>: <a href={recipeUrl}>{recipe.name}</a></li>
                         <li><strong>Cooking Time</strong>: {recipe.time} Minutes</li>
                         <li><strong>Ingredients</strong>:
                             <ul className="list-unstyled">

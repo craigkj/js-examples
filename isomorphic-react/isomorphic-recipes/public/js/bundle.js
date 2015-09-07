@@ -30,7 +30,6 @@ function RecipeActions(){"use strict";}
     Object.defineProperty(RecipeActions.prototype,"fetchRecipes",{writable:true,configurable:true,value:function() {"use strict";
         var that = this;
         recipeService.getRecipes().then(function(data) {
-            data[0].name = 'Dave';
             that.dispatch(data);
         }, function(error) {
             console.log(error);
@@ -67,14 +66,15 @@ var Recipe = React.createClass({displayName: "Recipe",
     },
     render:function() {
         var recipe = this.state.recipe;
-        var imageUrl = '/images/' + this.state.recipe.image;
+        var imageUrl = '/images/' + recipe.image;
+        var recipeUrl = '/recipe/' + recipe.name;
 
         return (
             React.createElement("div", {className: "recipe"}, 
                 React.createElement("div", {className: "pull-left"}, React.createElement("img", {src: imageUrl})), 
                 React.createElement("div", null, 
                     React.createElement("ul", {className: "list-unstyled"}, 
-                        React.createElement("li", null, React.createElement("strong", null, "Name"), ": ", recipe.name), 
+                        React.createElement("li", null, React.createElement("strong", null, "Name"), ": ", React.createElement("a", {href: recipeUrl}, recipe.name)), 
                         React.createElement("li", null, React.createElement("strong", null, "Cooking Time"), ": ", recipe.time, " Minutes"), 
                         React.createElement("li", null, React.createElement("strong", null, "Ingredients"), ":", 
                             React.createElement("ul", {className: "list-unstyled"}, 
@@ -114,14 +114,15 @@ var Recipe = React.createClass({displayName: "Recipe",
     },
     render:function() {
         var recipe = this.state.recipe;
-        var imageUrl = '/images/' + this.state.recipe.image;
+        var imageUrl = '/images/' + recipe.image;
+        var recipeUrl = '/recipe/' + recipe.name;
 
         return (
             React.createElement("div", {className: "recipe"}, 
                 React.createElement("div", {className: "pull-left"}, React.createElement("img", {src: imageUrl})), 
                 React.createElement("div", null, 
                     React.createElement("ul", {className: "list-unstyled"}, 
-                        React.createElement("li", null, React.createElement("strong", null, "Name"), ": ", recipe.name), 
+                        React.createElement("li", null, React.createElement("strong", null, "Name"), ": ", React.createElement("a", {href: recipeUrl}, recipe.name)), 
                         React.createElement("li", null, React.createElement("strong", null, "Cooking Time"), ": ", recipe.time, " Minutes"), 
                         React.createElement("li", null, React.createElement("strong", null, "Ingredients"), ":", 
                             React.createElement("ul", {className: "list-unstyled"}, 
