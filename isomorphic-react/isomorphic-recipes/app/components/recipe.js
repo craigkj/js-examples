@@ -12,6 +12,8 @@ var Recipe = React.createClass({
     componentWillUnmount() {
         RecipeStore.unlisten(this._onChange);
     },
+    _onChange() {
+    },
     render() {
         var recipe = this.state.recipe;
         var imageUrl = '/images/' + this.state.recipe.image;
