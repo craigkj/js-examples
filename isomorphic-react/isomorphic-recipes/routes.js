@@ -29,10 +29,21 @@ function renderRecipes(request, response) {
 
 function renderRecipeByName(request, response) {
     recipeApi.getRecipeByName(request.params.recipeName)
-        .then(function(data) {
-            response.status(200).render('index', {
-                html: JSON.stringify(data)
-            });
+        .then(function(recipe) {
+            try {
+                var data = { RecipeStore: { recipes: [recipe] } }
+                alt.bootstrap(JSON.stringify(data));
+                var iso = new Iso();
+                var content = React.renderToString(React.createElement(RecipeList));
+                iso.add(content, alt.flush())
+                response.render('index', {
+                    html: iso.render()
+                });
+            } catch(e) {
+                console.log('error');
+                console.log(e);
+            }
+
         }, function(error) {
             response.send();
         });
